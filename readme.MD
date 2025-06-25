@@ -43,34 +43,24 @@ The bot leverages order book depth, trade flow, technical indicators, and volume
 ## 🚀 Setup & Installation
 
 ### 1. Clone the Repo
+`
+git clone https://github.com/your-username/OrderBook_TradingBot.git
+cd OrderBook_TradingBot
+`
 
-```bash
-git clone https://github.com/your-username/binance-orderbook-bot.git
-cd binance-orderbook-bot
-
-2. Create Python Environment
-bash
-Copy
-Edit
+### 2. Create Python Environment
+`
 python -m venv venv
-source venv/bin/activate   # or venv\Scripts\activate on Windows
-pip install -r requirements.txt
-3. Set up Environment Variables
+venv\Scripts\activate 
+pip install python-binance python-dotenv pandas numpy
+`
+### 3. Set up Environment Variables
+Get Binance API Keys here : `https://www.binance.com/en-IN/my/settings/api-management`
 Create a .env file in the project root:
-
-env
-Copy
-Edit
+`
 BINANCE_API_KEY=your_api_key_here
 BINANCE_API_SECRET=your_api_secret_here
-4. Get Binance API Keys
-Go to Binance API Management
-
-Create a new API key
-
-Enable Futures permissions
-
-Copy the key & secret into your .env
+`
 
 ⚙️ Configuration Options
 Inside main.py:
@@ -93,51 +83,3 @@ Calculates metrics and indicators
 Generates BUY, SELL, or HOLD signal
 
 If signal is triggered, places a market order and dynamically manages stop-loss
-
-Logs everything in trade_log.txt
-
-✅ Example Log Entry
-pgsql
-Copy
-Edit
-2025-06-23 15:02:01 - INFO - Signal BUY | Price 82.40 | Position none
-2025-06-23 15:02:01 - INFO - [DRY RUN] Market BUY 0.220 LTCUSDT
-2025-06-23 15:02:03 - INFO - [DRY RUN] Stop SELL 0.220 LTCUSDT @ 80.12
-🛡 Safety Notes
-Use DRY_RUN mode for initial testing.
-
-Ensure your account has sufficient balance and margin enabled.
-
-Run the bot on low leverage or testnet first to verify logic.
-
-📈 Coming Enhancements (Suggestions)
-Backtesting engine integration
-
-Web dashboard with signal visualization
-
-Multi-symbol support and strategy switching
-
-Logging to database or cloud dashboard
-
-👨‍💻 Author
-Ayush
-Student & Developer
-Open to internships, freelance, or collaboration in Algo/Quant/Crypto systems
-Feel free to fork or reach out!
-
-📜 License
-MIT License – use freely, but at your own risk.
-
-yaml
-Copy
-Edit
-
----
-
-## 🧩 Notes
-
-- Add a `requirements.txt` with:
-python-binance
-python-dotenv
-pandas
-numpy
